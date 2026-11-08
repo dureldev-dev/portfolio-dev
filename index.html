@@ -1,59 +1,254 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Durel | Développeur Web</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <section class="hero">
-      <h1>Salut, je suis Durel</h1>
-      <p>Développeur Web en apprentissage</p>
-      <button>Me contacter</button>
-    </section>
-    <section class="about">
-      <h2>À propos de moi</h2>
-      <p>
-        Je suis Durel, développeur web passionné par la création d'applications
-        web modernes avec React, PHP et Laravel.
-      </p>
-    </section>
-    <section class="skills">
-      <h2>Mes compétences</h2>
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Durel – Développeur web full stack</title>
+  <meta name="description" content="Portfolio de Durel, développeur web full stack en apprentissage : React, Laravel, MySQL.">
 
-      <div class="skills-list">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Tailwind CSS</span>
-        <span>PHP</span>
-        <span>MySQL</span>
-        <span>React</span>
+  <!-- Police -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Tailwind CSS (CDN v4) : un simple <script> de chargement, pas de JS à écrire -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.1.4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Bricolage Grotesque", system-ui, sans-serif;
+      --color-base: #0c111d;
+      --color-surface: #131a2b;
+      --color-line: #222c44;
+      --color-ink: #e6ebf5;
+      --color-soft: #93a0ba;
+      --color-brand: #4c8dff;
+      --color-brand-deep: #2f6df0;
+      --shadow-card: 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body class="bg-base font-sans text-ink antialiased">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b border-line bg-base/90 backdrop-blur">
+    <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-4" aria-label="Navigation principale">
+      <a href="#accueil" class="text-lg font-semibold tracking-tight">Durel<span class="text-brand">.dev</span></a>
+
+      <!-- Bureau -->
+      <ul class="hidden items-center gap-7 text-sm text-soft md:flex">
+        <li><a class="hover:text-ink" href="#a-propos">À propos</a></li>
+        <li><a class="hover:text-ink" href="#competences">Compétences</a></li>
+        <li><a class="hover:text-ink" href="#projets">Projets</a></li>
+        <li><a class="hover:text-ink" href="#objectifs">Objectifs</a></li>
+        <li><a class="rounded-xl bg-brand px-4 py-2 font-medium text-base hover:bg-brand-deep hover:text-white" href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Mobile : menu en HTML pur avec <details> -->
+      <details class="relative md:hidden">
+        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-line [&::-webkit-details-marker]:hidden" aria-label="Ouvrir le menu">
+          <i class="fa-solid fa-bars"></i>
+        </summary>
+        <ul class="absolute right-0 top-12 w-56 rounded-2xl border border-line bg-surface p-3 text-soft shadow-card">
+          <li><a class="block rounded-lg px-3 py-2 hover:text-ink" href="#a-propos">À propos</a></li>
+          <li><a class="block rounded-lg px-3 py-2 hover:text-ink" href="#competences">Compétences</a></li>
+          <li><a class="block rounded-lg px-3 py-2 hover:text-ink" href="#projets">Projets</a></li>
+          <li><a class="block rounded-lg px-3 py-2 hover:text-ink" href="#objectifs">Objectifs</a></li>
+          <li><a class="block rounded-lg px-3 py-2 text-brand" href="#contact">Contact</a></li>
+        </ul>
+      </details>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section id="accueil" class="mx-auto grid max-w-5xl items-center gap-12 px-5 py-20 md:grid-cols-2 md:py-28">
+      <div>
+        <h1 class="text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+          Salut, je suis Durel.<br>
+          Développeur web en formation vers le full stack.
+        </h1>
+        <p class="mt-6 max-w-md text-lg leading-relaxed text-soft">
+          J’apprends à créer des applications web modernes. Mon objectif : transformer des idées en solutions digitales simples et efficaces.
+        </p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="#projets" class="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3 font-semibold text-base shadow-card hover:bg-brand-deep hover:text-white">
+            <i class="fa-solid fa-laptop-code"></i> Voir mes projets
+          </a>
+          <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-line px-6 py-3 font-semibold hover:border-brand">
+            <i class="fa-regular fa-envelope"></i> Me contacter
+          </a>
+        </div>
+      </div>
+
+      <!-- Carte code : remplace la photo -->
+      <div class="rounded-2xl border border-line bg-surface shadow-card">
+        <div class="flex items-center gap-2 border-b border-line px-4 py-3" aria-hidden="true">
+          <span class="h-3 w-3 rounded-full bg-line"></span>
+          <span class="h-3 w-3 rounded-full bg-line"></span>
+          <span class="h-3 w-3 rounded-full bg-brand"></span>
+          <span class="ml-3 text-xs text-soft">durel.js</span>
+        </div>
+<pre class="overflow-x-auto p-5 text-sm leading-7"><code><span class="text-soft">const</span> durel = {
+  role: <span class="text-brand">"Développeur full stack"</span>,
+  statut: <span class="text-brand">"en apprentissage"</span>,
+  stack: [<span class="text-brand">"React"</span>, <span class="text-brand">"Laravel"</span>, <span class="text-brand">"MySQL"</span>],
+  objectif: <span class="text-brand">"lancer mon premier SaaS"</span>,
+  ouvertAuxProjets: <span class="text-brand">true</span>
+};</code></pre>
       </div>
     </section>
-    <section class="projects">
-      <h2>Mes projets</h2>
 
-      <div class="project-card">
-        <h3>Portfolio Développeur</h3>
-        <p>Mon portfolio personnel développé en HTML, CSS et JavaScript.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Projet à venir</h3>
-        <p>Une future application web réalisée avec React et Laravel.</p>
+    <!-- À propos -->
+    <section id="a-propos" class="scroll-mt-20 border-t border-line">
+      <div class="mx-auto grid max-w-5xl gap-10 px-5 py-20 md:grid-cols-3">
+        <h2 class="text-3xl font-bold tracking-tight">À propos</h2>
+        <div class="space-y-5 text-lg leading-relaxed text-soft md:col-span-2">
+          <p>
+            Je suis un développeur web passionné par la création de sites et d’applications modernes.
+          </p>
+          <p>
+            Je me perfectionne en <span class="text-ink">React</span>, <span class="text-ink">PHP</span>, <span class="text-ink">Laravel</span> et <span class="text-ink">MySQL</span> pour devenir un développeur full stack professionnel et lancer mes propres projets SaaS.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="contact">
-      <h2>Me contacter</h2>
+    <!-- Compétences -->
+    <section id="competences" class="scroll-mt-20 border-t border-line">
+      <div class="mx-auto max-w-5xl px-5 py-20">
+        <h2 class="text-3xl font-bold tracking-tight">Compétences</h2>
 
-      <p>Email : dureldev@gmail.com</p>
+        <div class="mt-10 grid gap-5 sm:grid-cols-2">
+          <div class="rounded-2xl border border-line bg-surface p-6 shadow-card">
+            <h3 class="flex items-center gap-3 font-semibold"><i class="fa-solid fa-display w-5 text-brand"></i> Frontend</h3>
+            <ul class="mt-4 flex flex-wrap gap-2 text-sm text-soft">
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-brands fa-html5"></i> HTML</li>
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-brands fa-css3-alt"></i> CSS</li>
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-brands fa-js"></i> JavaScript</li>
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-solid fa-wind"></i> Tailwind CSS</li>
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-brands fa-react"></i> React</li>
+            </ul>
+          </div>
 
-      <a href="https://github.com/dureldev-dev" target="_blank"> Mon GitHub </a>
+          <div class="rounded-2xl border border-line bg-surface p-6 shadow-card">
+            <h3 class="flex items-center gap-3 font-semibold"><i class="fa-solid fa-server w-5 text-brand"></i> Backend</h3>
+            <ul class="mt-4 flex flex-wrap gap-2 text-sm text-soft">
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-brands fa-php"></i> PHP</li>
+              <li class="flex items-center gap-2 rounded-lg border border-brand/40 bg-base px-3 py-1.5 text-brand"><i class="fa-brands fa-laravel"></i> Laravel · en cours</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-line bg-surface p-6 shadow-card">
+            <h3 class="flex items-center gap-3 font-semibold"><i class="fa-solid fa-database w-5 text-brand"></i> Base de données</h3>
+            <ul class="mt-4 flex flex-wrap gap-2 text-sm text-soft">
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-solid fa-database"></i> MySQL</li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-line bg-surface p-6 shadow-card">
+            <h3 class="flex items-center gap-3 font-semibold"><i class="fa-solid fa-screwdriver-wrench w-5 text-brand"></i> Outils</h3>
+            <ul class="mt-4 flex flex-wrap gap-2 text-sm text-soft">
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-brands fa-git-alt"></i> Git</li>
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-brands fa-github"></i> GitHub</li>
+              <li class="flex items-center gap-2 rounded-lg bg-base px-3 py-1.5"><i class="fa-solid fa-code"></i> VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <script src="app.js"></script>
-  </body>
+    <!-- Projets -->
+    <section id="projets" class="scroll-mt-20 border-t border-line">
+      <div class="mx-auto max-w-5xl px-5 py-20">
+        <h2 class="text-3xl font-bold tracking-tight">Projets</h2>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-3">
+          <article class="flex flex-col rounded-2xl border border-line bg-surface p-6 shadow-card">
+            <span class="w-fit rounded-lg bg-brand/15 px-2.5 py-1 text-xs font-medium text-brand">En ligne</span>
+            <h3 class="mt-4 text-xl font-semibold">Portfolio personnel</h3>
+            <p class="mt-2 flex-1 text-soft">Le site que vous êtes en train de lire, construit avec HTML et Tailwind CSS.</p>
+            <a href="https://github.com/dureldev-dev/portfolio-dev" class="mt-6 inline-flex items-center gap-2 font-medium text-brand hover:underline">
+              <i class="fa-brands fa-github"></i> Voir le code
+            </a>
+          </article>
+
+          <article class="flex flex-col rounded-2xl border border-dashed border-line p-6">
+            <span class="w-fit rounded-lg bg-surface px-2.5 py-1 text-xs font-medium text-soft">À venir</span>
+            <h3 class="mt-4 text-xl font-semibold text-soft">Application de gestion</h3>
+            <p class="mt-2 flex-1 text-soft">Un outil pour suivre et organiser des données du quotidien.</p>
+          </article>
+
+          <article class="flex flex-col rounded-2xl border border-dashed border-line p-6">
+            <span class="w-fit rounded-lg bg-surface px-2.5 py-1 text-xs font-medium text-soft">À venir</span>
+            <h3 class="mt-4 text-xl font-semibold text-soft">Projet SaaS</h3>
+            <p class="mt-2 flex-1 text-soft">Mon premier produit en ligne, de l’idée jusqu’aux premiers utilisateurs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objectifs -->
+    <section id="objectifs" class="scroll-mt-20 border-t border-line">
+      <div class="mx-auto grid max-w-5xl gap-10 px-5 py-20 md:grid-cols-3">
+        <h2 class="text-3xl font-bold tracking-tight">Objectifs</h2>
+        <ul class="space-y-4 text-lg md:col-span-2">
+          <li class="flex items-center gap-4 rounded-2xl border border-line bg-surface px-5 py-4 shadow-card">
+            <i class="fa-regular fa-circle text-brand"></i> Maîtriser React
+          </li>
+          <li class="flex items-center gap-4 rounded-2xl border border-line bg-surface px-5 py-4 shadow-card">
+            <i class="fa-regular fa-circle text-brand"></i> Maîtriser Laravel
+          </li>
+          <li class="flex items-center gap-4 rounded-2xl border border-line bg-surface px-5 py-4 shadow-card">
+            <i class="fa-regular fa-circle text-brand"></i> Réaliser plusieurs projets complets
+          </li>
+          <li class="flex items-center gap-4 rounded-2xl border border-line bg-surface px-5 py-4 shadow-card">
+            <i class="fa-regular fa-circle text-brand"></i> Obtenir mes premiers clients freelance
+          </li>
+          <li class="flex items-center gap-4 rounded-2xl border border-line bg-surface px-5 py-4 shadow-card">
+            <i class="fa-regular fa-circle text-brand"></i> Développer un premier SaaS
+          </li>
+          <li class="flex items-center gap-4 rounded-2xl border border-line bg-surface px-5 py-4 shadow-card">
+            <i class="fa-regular fa-circle text-brand"></i> Obtenir mes premiers revenus freelance
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="scroll-mt-20 border-t border-line">
+      <div class="mx-auto max-w-5xl px-5 py-20">
+        <div class="rounded-2xl border border-line bg-surface p-8 shadow-card sm:p-12">
+          <h2 class="text-3xl font-bold tracking-tight">Vous avez un projet ou une idée ?</h2>
+          <p class="mt-4 max-w-lg text-lg text-soft">N’hésitez pas à me contacter, je réponds avec plaisir.</p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <!-- Remplace les liens ci-dessous par les tiens -->
+            <a href="mailto:dureldev@gmail.com" class="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3 font-semibold text-base hover:bg-brand-deep hover:text-white">
+              <i class="fa-regular fa-envelope"></i> Email
+            </a>
+            <a href="https://github.com/dureldev-dev" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl border border-line px-6 py-3 font-semibold hover:border-brand">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://wa.me/237675535346" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-xl border border-line px-6 py-3 font-semibold hover:border-brand">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-line">
+    <p class="mx-auto max-w-5xl px-5 py-8 text-sm text-soft">
+      © 2026 Durel Dev. Tous droits réservés.
+    </p>
+  </footer>
+
+</body>
 </html>
