@@ -60,3 +60,20 @@ button{
     padding: 10px 15px;
     border-radius: 5px;
 }
+
+.projects{
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.projects h2{
+    margin-bottom: 30px;
+}
+
+.project-card{
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
