@@ -36,3 +36,27 @@ button{
 .about h2{
     margin-bottom: 20px;
 }
+
+.skills{
+    padding: 80px 20px;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.skills h2{
+    margin-bottom: 20px;
+}
+
+.skills-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skills-list span{
+    background: #3b82f6;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
