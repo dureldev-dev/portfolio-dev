@@ -27,3 +27,12 @@ button{
     cursor: pointer;
     border-radius: 5px;
 }
+
+.about{
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.about h2{
+    margin-bottom: 20px;
+}
